@@ -45,13 +45,13 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: SITE_CONFIG.domain,
     siteName: SITE_CONFIG.name,
-    title: "CloudWize Consulting Services | Technology. Transformation. Talent. Trust.",
+    title: "CloudWize Consulting Services | Enterprise Technology & Advisory",
     description: SITE_CONFIG.description,
     images: [
       {
-        url: "/logo.svg",
+        url: "/logo.png",
         width: 1200,
-        height: 630,
+        height: 400,
         alt: "CloudWize Consulting Services Logo",
       },
     ],
@@ -60,14 +60,14 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "CloudWize Consulting Services",
     description: SITE_CONFIG.description,
-    images: ["/logo.svg"],
+    images: ["/logo.png"],
   },
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
       { url: "/favicon.ico" },
     ],
-    apple: "/logo.svg",
+    apple: "/logo.png",
   },
 };
 
@@ -82,7 +82,7 @@ export default function RootLayout({
     "name": SITE_CONFIG.name,
     "alternateName": SITE_CONFIG.shortName,
     "url": SITE_CONFIG.domain,
-    "logo": `${SITE_CONFIG.domain}/logo.svg`,
+    "logo": `${SITE_CONFIG.domain}/logo.png`,
     "description": SITE_CONFIG.description,
     "address": {
       "@type": "PostalAddress",
@@ -149,7 +149,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-screen flex flex-col bg-white text-[#172033] selection:bg-[#2563EB]/15 selection:text-[#0B1220]">
+      <body className="min-h-screen flex flex-col bg-white text-[#0F172A] selection:bg-[#2563EB]/15 selection:text-[#071B38]">
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

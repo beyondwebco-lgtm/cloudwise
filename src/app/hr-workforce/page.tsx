@@ -6,9 +6,7 @@ import {
   CheckCircle2, 
   ArrowRight, 
   FileCheck, 
-  UserCheck, 
-  Briefcase,
-  AlertCircle
+  UserCheck
 } from "lucide-react";
 import { PageHero } from "@/components/ui/PageHero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -45,7 +43,7 @@ export default function HRWorkforcePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             badge="Consulting Pillars"
-            badgeVariant="gold"
+            badgeVariant="blue"
             title="Strategic Human Capital & Technical Talent Sourcing"
             description="We assist growing and enterprise organizations in designing scalable people operations, forecasting headcount demands, and recruiting specialized digital engineering leaders."
           />
@@ -54,32 +52,30 @@ export default function HRWorkforcePage() {
             {service.pillars.map((pillar, idx) => (
               <div
                 key={pillar.title}
-                className="relative bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-premium transition-all duration-300 flex flex-col justify-between"
+                className="relative bg-white rounded-2xl p-8 border border-[#DBE5F0] shadow-subtle hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
               >
-                <div className="absolute top-0 left-0 right-0 h-1 bg-[#D4AF37] rounded-t-2xl" />
-
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <span className="text-xs font-mono font-bold text-[#D4AF37] uppercase tracking-wider">
+                    <span className="text-xs font-mono font-bold text-[#2563EB] uppercase tracking-wider">
                       Pillar 0{idx + 1}
                     </span>
-                    <Users className="w-5 h-5 text-[#D4AF37]" />
+                    <Users className="w-5 h-5 text-[#2563EB]" />
                   </div>
 
-                  <h3 className="text-xl font-bold font-heading text-[#0B1220] mb-2">
+                  <h3 className="text-xl font-bold font-heading text-[#071B38] mb-2">
                     {pillar.title}
                   </h3>
 
                   {pillar.description && (
-                    <p className="text-sm text-slate-600 mb-6 leading-relaxed">
+                    <p className="text-sm text-[#475569] mb-6 leading-relaxed">
                       {pillar.description}
                     </p>
                   )}
 
-                  <ul className="space-y-3 border-t border-slate-100 pt-5">
+                  <ul className="space-y-3 border-t border-[#DBE5F0]/60 pt-5">
                     {pillar.points.map((pt) => (
-                      <li key={pt} className="flex items-start gap-2.5 text-xs text-slate-700">
-                        <CheckCircle2 className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" />
+                      <li key={pt} className="flex items-start gap-2.5 text-xs text-[#0F172A]">
+                        <CheckCircle2 className="w-4 h-4 text-[#2563EB] shrink-0 mt-0.5" />
                         <span className="leading-relaxed">{pt}</span>
                       </li>
                     ))}
@@ -92,23 +88,23 @@ export default function HRWorkforcePage() {
       </section>
 
       {/* Deliverables & Target Audience */}
-      <section className="py-20 sm:py-24 bg-[#F3F6FA] border-y border-slate-200">
+      <section className="py-20 sm:py-24 bg-[#F8FAFC] border-y border-[#DBE5F0]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             
             {/* Deliverables */}
-            <div className="bg-white rounded-2xl p-8 sm:p-10 border border-slate-200 shadow-sm">
-              <div className="flex items-center gap-2.5 text-sm font-bold text-[#D4AF37] mb-4">
-                <FileCheck className="w-5 h-5 text-[#D4AF37]" />
+            <div className="bg-white rounded-2xl p-8 sm:p-10 border border-[#DBE5F0] shadow-subtle">
+              <div className="flex items-center gap-2.5 text-sm font-bold text-[#2563EB] mb-4">
+                <FileCheck className="w-5 h-5 text-[#2563EB]" />
                 <span className="uppercase tracking-wider">Consulting Artifacts</span>
               </div>
-              <h3 className="text-2xl font-bold font-heading text-[#0B1220] mb-6">
+              <h3 className="text-2xl font-bold font-heading text-[#071B38] mb-6">
                 What You Receive
               </h3>
               <ul className="space-y-3.5">
                 {service.deliverables.map((item) => (
-                  <li key={item} className="flex items-center gap-3 text-sm text-slate-700">
-                    <div className="w-2 h-2 rounded-full bg-[#D4AF37]" />
+                  <li key={item} className="flex items-center gap-3 text-sm text-[#0F172A]">
+                    <div className="w-2 h-2 rounded-full bg-[#2563EB]" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -116,9 +112,9 @@ export default function HRWorkforcePage() {
             </div>
 
             {/* Ideal For */}
-            <div className="bg-[#0B1220] text-white rounded-2xl p-8 sm:p-10 border border-white/10 shadow-xl">
-              <div className="flex items-center gap-2.5 text-sm font-bold text-[#22D3EE] mb-4">
-                <UserCheck className="w-5 h-5 text-[#22D3EE]" />
+            <div className="bg-[#071B38] text-white rounded-2xl p-8 sm:p-10 border border-[#123B73] shadow-card">
+              <div className="flex items-center gap-2.5 text-sm font-bold text-[#60A5FA] mb-4">
+                <UserCheck className="w-5 h-5 text-[#60A5FA]" />
                 <span className="uppercase tracking-wider">Target Profile</span>
               </div>
               <h3 className="text-2xl font-bold font-heading text-white mb-6">
@@ -126,8 +122,8 @@ export default function HRWorkforcePage() {
               </h3>
               <ul className="space-y-3.5">
                 {service.idealFor.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm text-slate-300">
-                    <CheckCircle2 className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" />
+                  <li key={item} className="flex items-start gap-3 text-sm text-slate-200">
+                    <CheckCircle2 className="w-4 h-4 text-[#60A5FA] shrink-0 mt-0.5" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -139,21 +135,21 @@ export default function HRWorkforcePage() {
       </section>
 
       {/* CTA Box */}
-      <section className="py-16 sm:py-20 bg-[#142B4A] text-white text-center">
+      <section className="py-16 sm:py-20 bg-[#071B38] text-white text-center border-t border-[#123B73]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
           <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-white">
             Discuss Your Workforce Needs
           </h2>
-          <p className="text-lg text-slate-200 max-w-2xl mx-auto">
+          <p className="text-lg text-slate-300 max-w-2xl mx-auto">
             Let's discuss your business challenges and identify practical opportunities for improvement.
           </p>
           <div className="pt-2">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl text-base font-semibold text-white bg-gradient-to-r from-[#2563EB] to-[#1d4ed8] shadow-xl hover:scale-105 transition-all"
+              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl text-base font-semibold text-white bg-[#2563EB] hover:bg-[#1D4ED8] shadow-md transition-all"
             >
               <span>Discuss Your Workforce Needs</span>
-              <ArrowRight className="w-4 h-4 text-[#22D3EE]" />
+              <ArrowRight className="w-4 h-4 text-[#93C5FD]" />
             </Link>
           </div>
         </div>

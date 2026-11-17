@@ -7,7 +7,6 @@ import {
   Map, 
   Zap, 
   LineChart, 
-  ArrowRight,
   FileCheck,
   ChevronRight
 } from "lucide-react";
@@ -26,57 +25,59 @@ export function ProcessTimeline() {
   ];
 
   return (
-    <section className="py-20 sm:py-28 bg-[#0B1220] text-white relative overflow-hidden border-y border-[#22D3EE]/15">
-      {/* Background ambient lighting */}
-      <div className="absolute inset-0 bg-grid-pattern-dark opacity-60 pointer-events-none" />
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-[#2563EB]/15 rounded-full blur-[120px] pointer-events-none" />
+    <section className="py-20 sm:py-28 bg-[#071B38] text-white relative overflow-hidden border-y border-[#123B73]">
+      {/* Background subtle blue glow */}
+      <div className="absolute inset-0 bg-navy-grid opacity-60 pointer-events-none" />
+      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-[#2563EB]/15 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge="Structured Methodology"
-          badgeVariant="cyan"
+          badgeVariant="sky"
           theme="dark"
           title="Our 5-Stage Engagement Process"
           description="A disciplined, transparent consulting framework that takes initiatives from high-level discovery through rigorous assessment, strategic roadmapping, flawless execution, and long-term optimization."
         />
 
         {/* Desktop Interactive Stepper */}
-        <div className="hidden lg:grid grid-cols-5 gap-3 mb-12">
+        <div className="hidden lg:grid grid-cols-5 gap-3 mb-10 relative">
+          {/* Subtle horizontal connecting line */}
+          <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-[#123B73] -z-0 -translate-y-6" />
+
           {ENGAGEMENT_STEPS.map((item, idx) => {
             const isSelected = activeStep === idx;
             return (
               <button
                 key={item.step}
                 onClick={() => setActiveStep(idx)}
-                className={`p-5 rounded-xl border text-left transition-all duration-300 relative ${
+                className={`p-5 rounded-2xl border text-left transition-all duration-300 relative z-10 ${
                   isSelected
-                    ? "bg-[#142B4A] border-[#22D3EE] shadow-lg shadow-[#22D3EE]/15 scale-[1.02]"
-                    : "bg-[#0B1220]/80 border-white/10 hover:border-white/20 opacity-80 hover:opacity-100"
+                    ? "bg-[#123B73] border-[#60A5FA] shadow-lg shadow-[#2563EB]/20 scale-[1.02]"
+                    : "bg-[#071B38]/90 border-white/10 hover:border-white/25 opacity-85 hover:opacity-100"
                 }`}
               >
-                {/* Gold Counter (preserves original counter style from legacy style.css) */}
                 <div className="flex items-center justify-between mb-3">
                   <span className={`text-2xl font-black font-heading ${
-                    isSelected ? "text-[#D4AF37]" : "text-slate-500"
+                    isSelected ? "text-[#60A5FA]" : "text-slate-400"
                   }`}>
                     {item.step}
                   </span>
-                  <div className={`p-2 rounded-lg ${
-                    isSelected ? "bg-[#2563EB] text-white" : "bg-white/5 text-slate-400"
+                  <div className={`p-2 rounded-xl transition-colors ${
+                    isSelected ? "bg-[#2563EB] text-white" : "bg-white/5 text-slate-300"
                   }`}>
                     {stepIcons[idx]}
                   </div>
                 </div>
 
-                <div className="text-base font-bold text-white mb-1">
+                <div className="text-base font-bold text-white mb-1 font-heading">
                   {item.name}
                 </div>
-                <div className="text-xs text-slate-400 line-clamp-1">
+                <div className="text-xs text-slate-300 line-clamp-1">
                   {item.title}
                 </div>
 
                 {isSelected && (
-                  <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-[#142B4A] border-r border-b border-[#22D3EE] rotate-45" />
+                  <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-[#123B73] border-r border-b border-[#60A5FA] rotate-45" />
                 )}
               </button>
             );
@@ -84,15 +85,15 @@ export function ProcessTimeline() {
         </div>
 
         {/* Active Stage Detailed Panel */}
-        <div className="relative rounded-2xl bg-gradient-to-br from-[#142B4A]/90 to-[#0B1220] border border-[#22D3EE]/30 p-8 sm:p-12 shadow-2xl backdrop-blur-xl">
+        <div className="relative rounded-3xl bg-gradient-to-br from-[#123B73]/90 to-[#071B38] border border-[#2563EB]/40 p-8 sm:p-12 shadow-2xl backdrop-blur-xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             <div className="lg:col-span-8 space-y-4">
               <div className="flex items-center gap-3">
-                <span className="text-sm font-mono font-bold text-[#D4AF37] px-3 py-1 rounded-md bg-[#D4AF37]/10 border border-[#D4AF37]/30">
-                  STAGE {ENGAGEMENT_STEPS[activeStep].step}
+                <span className="text-xs font-mono font-bold text-white px-3 py-1 rounded-md bg-[#2563EB] shadow-sm">
+                  PHASE {ENGAGEMENT_STEPS[activeStep].step}
                 </span>
-                <span className="text-xs text-[#22D3EE] uppercase tracking-wider font-semibold">
+                <span className="text-xs text-[#60A5FA] uppercase tracking-wider font-semibold">
                   Standard Operating Cadence
                 </span>
               </div>
@@ -101,39 +102,39 @@ export function ProcessTimeline() {
                 {ENGAGEMENT_STEPS[activeStep].title}
               </h3>
 
-              <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-light">
+              <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-light">
                 {ENGAGEMENT_STEPS[activeStep].desc}
               </p>
 
-              <div className="pt-2 flex items-center gap-3 text-sm text-[#22D3EE]">
-                <FileCheck className="w-5 h-5 text-[#D4AF37]" />
+              <div className="pt-2 flex items-center gap-3 text-sm text-[#93C5FD]">
+                <FileCheck className="w-5 h-5 text-[#60A5FA]" />
                 <span className="text-white font-medium">Core Deliverable:</span>
-                <span className="underline decoration-[#22D3EE]/50 underline-offset-4">
+                <span className="underline decoration-[#60A5FA]/60 underline-offset-4">
                   {ENGAGEMENT_STEPS[activeStep].deliverable}
                 </span>
               </div>
             </div>
 
             {/* Stepper Quick Navigation for Mobile & Extra Controls */}
-            <div className="lg:col-span-4 flex flex-col gap-3 justify-center border-t lg:border-t-0 lg:border-l border-white/10 pt-6 lg:pt-0 lg:pl-8">
-              <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+            <div className="lg:col-span-4 flex flex-col gap-2.5 justify-center border-t lg:border-t-0 lg:border-l border-white/10 pt-6 lg:pt-0 lg:pl-8">
+              <span className="text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1">
                 Phase Progression
               </span>
-              <div className="space-y-2">
+              <div className="space-y-1.5">
                 {ENGAGEMENT_STEPS.map((s, i) => (
                   <button
                     key={s.step}
                     onClick={() => setActiveStep(i)}
-                    className={`flex items-center justify-between w-full px-3 py-2 rounded-lg text-xs font-medium transition-all ${
+                    className={`flex items-center justify-between w-full px-3.5 py-2.5 rounded-xl text-xs font-medium transition-all ${
                       activeStep === i
-                        ? "bg-[#2563EB] text-white"
-                        : "text-slate-400 hover:text-white hover:bg-white/5"
+                        ? "bg-[#2563EB] text-white shadow-sm font-semibold"
+                        : "text-slate-300 hover:text-white hover:bg-white/5"
                     }`}
                   >
                     <span>
                       {s.step}. {s.name}
                     </span>
-                    <ChevronRight className={`w-3.5 h-3.5 ${activeStep === i ? "text-white" : "text-slate-600"}`} />
+                    <ChevronRight className={`w-3.5 h-3.5 ${activeStep === i ? "text-white" : "text-slate-500"}`} />
                   </button>
                 ))}
               </div>

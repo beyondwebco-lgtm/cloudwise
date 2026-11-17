@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 140" fill="none">
+  <!-- Symbol for Dark Background -->
+  <g transform="translate(10, -5) scale(0.68)">
+    <path
+      d="M 68 165 C 40 165 20 148 20 122 C 20 100 36 84 56 81 C 60 52 86 30 118 30 C 146 30 170 48 178 74 C 198 76 214 92 214 114 C 214 138 196 158 170 162"
+      stroke="#FFFFFF"
+      stroke-width="16"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M 62 148 C 65 110 88 82 122 82 C 142 82 158 94 164 110"
+      stroke="#60A5FA"
+      stroke-width="12"
+      stroke-linecap="round"
+    />
+    <circle cx="164" cy="110" r="8" fill="#60A5FA" />
+    <path
+      d="M 45 158 C 55 136 85 118 135 114 C 158 112 176 120 190 126"
+      stroke="#3B82F6"
+      stroke-width="12"
+      stroke-linecap="round"
+    />
+    <circle cx="190" cy="126" r="8" fill="#3B82F6" />
+    <path
+      d="M 32 165 C 50 165 80 156 120 148 C 138 144 148 148 152 156"
+      stroke="#60A5FA"
+      stroke-width="11"
+      stroke-linecap="round"
+    />
+    <circle cx="152" cy="156" r="7" fill="#60A5FA" />
+  </g>
+
+  <!-- Wordmark for Dark Background -->
+  <!-- "Cloud" in Pure White -->
+  <text x="175" y="78" font-family="Manrope, Inter, system-ui, sans-serif" font-weight="800" font-size="54" fill="#FFFFFF" letter-spacing="-0.03em">Cloud</text>
+  <!-- "Wize" in Vibrant Sky/Royal Blue #60A5FA -->
+  <text x="328" y="78" font-family="Manrope, Inter, system-ui, sans-serif" font-weight="800" font-size="54" fill="#60A5FA" letter-spacing="-0.03em">Wize</text>
+
+  <!-- Subtitle in Sky Blue #93C5FD -->
+  <text x="178" y="108" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="13" fill="#93C5FD" letter-spacing="0.28em">CONSULTING SERVICES</text>
+</svg>

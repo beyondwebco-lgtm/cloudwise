@@ -2,16 +2,16 @@ import React from "react";
 
 interface BadgeProps {
   children: React.ReactNode;
-  variant?: "cyan" | "gold" | "blue" | "slate" | "outline";
+  variant?: "blue" | "sky" | "corporate" | "ice" | "outline";
   className?: string;
 }
 
-export function Badge({ children, variant = "cyan", className = "" }: BadgeProps) {
+export function Badge({ children, variant = "blue", className = "" }: BadgeProps) {
   const variantStyles = {
-    cyan: "bg-[#22D3EE]/10 text-[#22D3EE] border-[#22D3EE]/30",
-    gold: "bg-[#D4AF37]/10 text-[#D4AF37] border-[#D4AF37]/30",
-    blue: "bg-[#2563EB]/10 text-[#2563EB] border-[#2563EB]/30",
-    slate: "bg-slate-100 text-slate-700 border-slate-200",
+    blue: "bg-[#2563EB]/10 text-[#2563EB] border-[#2563EB]/25",
+    sky: "bg-[#60A5FA]/15 text-[#60A5FA] border-[#60A5FA]/30",
+    corporate: "bg-[#123B73]/10 text-[#123B73] border-[#123B73]/25",
+    ice: "bg-[#EFF6FF] text-[#123B73] border-[#DBE5F0]",
     outline: "bg-transparent text-slate-300 border-white/20",
   };
 

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 200" fill="none">
+  <!-- Outer Cloud Boundary (Pure White for Dark Navy #071B38 Background) -->
+  <path
+    d="M 68 165 C 40 165 20 148 20 122 C 20 100 36 84 56 81 C 60 52 86 30 118 30 C 146 30 170 48 178 74 C 198 76 214 92 214 114 C 214 138 196 158 170 162"
+    stroke="#FFFFFF"
+    stroke-width="16"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+
+  <!-- Circuit Trace 1: Inner Loop / Core Arc -->
+  <path
+    d="M 62 148 C 65 110 88 82 122 82 C 142 82 158 94 164 110"
+    stroke="#60A5FA"
+    stroke-width="12"
+    stroke-linecap="round"
+  />
+  <circle cx="164" cy="110" r="8" fill="#60A5FA" />
+
+  <!-- Circuit Trace 2: Mid-Level Swoop -->
+  <path
+    d="M 45 158 C 55 136 85 118 135 114 C 158 112 176 120 190 126"
+    stroke="#3B82F6"
+    stroke-width="12"
+    stroke-linecap="round"
+  />
+  <circle cx="190" cy="126" r="8" fill="#3B82F6" />
+
+  <!-- Circuit Trace 3: Lower Base Arc -->
+  <path
+    d="M 32 165 C 50 165 80 156 120 148 C 138 144 148 148 152 156"
+    stroke="#60A5FA"
+    stroke-width="11"
+    stroke-linecap="round"
+  />
+  <circle cx="152" cy="156" r="7" fill="#60A5FA" />
+</svg>

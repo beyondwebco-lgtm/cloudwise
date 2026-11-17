@@ -10,15 +10,39 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        brand: {
-          midnight: "#0B1220",
-          navy: "#142B4A",
-          electric: "#2563EB",
-          cyan: "#22D3EE",
-          gold: "#D4AF37",
-          softgrey: "#F3F6FA",
-          slate: "#64748B",
-          text: "#172033",
+        navy: {
+          DEFAULT: "#071B38",
+          dark: "#051329",
+          light: "#0D274D",
+        },
+        corporate: {
+          DEFAULT: "#123B73",
+          dark: "#0E2F5C",
+          light: "#1B4F99",
+        },
+        primary: {
+          blue: "#2563EB",
+          hover: "#1D4ED8",
+          dark: "#1E40AF",
+        },
+        sky: {
+          DEFAULT: "#60A5FA",
+          light: "#93C5FD",
+          subtle: "#BFDBFE",
+        },
+        ice: {
+          DEFAULT: "#EFF6FF",
+          light: "#F5F9FF",
+        },
+        surface: {
+          DEFAULT: "#F8FAFC",
+          card: "#FFFFFF",
+        },
+        slate: {
+          primary: "#0F172A",
+          secondary: "#475569",
+          muted: "#64748B",
+          border: "#DBE5F0",
         },
       },
       fontFamily: {
@@ -26,14 +50,29 @@ const config: Config = {
         sans: ["var(--font-inter)", "sans-serif"],
       },
       boxShadow: {
-        'premium': '0 20px 40px -15px rgba(11, 18, 32, 0.08), 0 0 1px 1px rgba(11, 18, 32, 0.04)',
-        'premium-hover': '0 30px 60px -15px rgba(37, 99, 235, 0.15), 0 0 1px 1px rgba(34, 211, 238, 0.2)',
-        'glow-cyan': '0 0 25px -5px rgba(34, 211, 238, 0.3)',
-        'glow-electric': '0 0 30px -5px rgba(37, 99, 235, 0.35)',
+        'subtle': '0 1px 3px rgba(7, 27, 56, 0.05), 0 1px 2px rgba(7, 27, 56, 0.03)',
+        'card': '0 4px 20px -2px rgba(7, 27, 56, 0.06), 0 2px 6px -1px rgba(7, 27, 56, 0.03)',
+        'card-hover': '0 16px 36px -4px rgba(37, 99, 235, 0.12), 0 4px 12px -2px rgba(7, 27, 56, 0.04)',
+        'glow-blue': '0 0 35px -5px rgba(37, 99, 235, 0.25)',
+        'glow-sky': '0 0 25px -3px rgba(96, 165, 250, 0.3)',
       },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'subtle-grid': 'radial-gradient(circle, rgba(34, 211, 238, 0.12) 1px, transparent 1px)',
+      animation: {
+        'flow-energy': 'flowEnergy 12s ease-in-out infinite',
+        'pulse-subtle': 'pulseSubtle 4s ease-in-out infinite',
+        'node-ping': 'nodePing 3s cubic-bezier(0, 0, 0.2, 1) infinite',
+      },
+      keyframes: {
+        flowEnergy: {
+          '0%, 100%': { strokeDashoffset: '0' },
+          '50%': { strokeDashoffset: '-120' },
+        },
+        pulseSubtle: {
+          '0%, 100%': { opacity: '0.4', transform: 'scale(1)' },
+          '50%': { opacity: '0.8', transform: 'scale(1.05)' },
+        },
+        nodePing: {
+          '75%, 100%': { transform: 'scale(2)', opacity: '0' },
+        },
       },
     },
   },

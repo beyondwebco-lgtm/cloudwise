@@ -1,7 +1,6 @@
 import React from "react";
 import { Metadata } from "next";
-import Link from "next/link";
-import { AlertCircle, Scale } from "lucide-react";
+import { AlertCircle } from "lucide-react";
 import { PageHero } from "@/components/ui/PageHero";
 import { SITE_CONFIG } from "@/data/content";
 
@@ -24,18 +23,18 @@ export default function TermsPage() {
       />
 
       <section className="py-20 sm:py-24 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 text-slate-700">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 text-[#475569]">
           
           {/* Legal Notice Box */}
-          <div className="p-6 rounded-2xl bg-[#FFF8E1] border-l-4 border-[#D4AF37] flex items-start gap-3.5">
-            <AlertCircle className="w-5 h-5 text-[#D4AF37] shrink-0 mt-0.5" />
-            <div className="text-xs text-slate-800 leading-relaxed">
+          <div className="p-6 rounded-2xl bg-[#EFF6FF] border-l-4 border-[#2563EB] flex items-start gap-3.5">
+            <AlertCircle className="w-5 h-5 text-[#2563EB] shrink-0 mt-0.5" />
+            <div className="text-xs text-[#0F172A] leading-relaxed">
               <strong>Template Notice:</strong> These Terms of Use govern general website access. Binding consulting engagements, project deliverables, payment schedules, and liability thresholds are governed by mutually executed Master Services Agreements (MSA) and Statements of Work (SOW).
             </div>
           </div>
 
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold font-heading text-[#0B1220]">
+            <h2 className="text-2xl font-bold font-heading text-[#071B38]">
               1. Website Usage
             </h2>
             <p className="text-base leading-relaxed">
@@ -44,7 +43,7 @@ export default function TermsPage() {
           </div>
 
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold font-heading text-[#0B1220]">
+            <h2 className="text-2xl font-bold font-heading text-[#071B38]">
               2. Intellectual Property
             </h2>
             <p className="text-base leading-relaxed">
@@ -53,7 +52,7 @@ export default function TermsPage() {
           </div>
 
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold font-heading text-[#0B1220]">
+            <h2 className="text-2xl font-bold font-heading text-[#071B38]">
               3. Informational Content & Non-Reliance
             </h2>
             <p className="text-base leading-relaxed">
@@ -62,7 +61,7 @@ export default function TermsPage() {
           </div>
 
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold font-heading text-[#0B1220]">
+            <h2 className="text-2xl font-bold font-heading text-[#071B38]">
               4. Consulting Engagement Limitations
             </h2>
             <p className="text-base leading-relaxed">
@@ -71,7 +70,7 @@ export default function TermsPage() {
           </div>
 
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold font-heading text-[#0B1220]">
+            <h2 className="text-2xl font-bold font-heading text-[#071B38]">
               5. Third-Party Links & Platforms
             </h2>
             <p className="text-base leading-relaxed">
@@ -80,7 +79,7 @@ export default function TermsPage() {
           </div>
 
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold font-heading text-[#0B1220]">
+            <h2 className="text-2xl font-bold font-heading text-[#071B38]">
               6. Limitation of Liability
             </h2>
             <p className="text-base leading-relaxed">
@@ -89,7 +88,7 @@ export default function TermsPage() {
           </div>
 
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold font-heading text-[#0B1220]">
+            <h2 className="text-2xl font-bold font-heading text-[#071B38]">
               7. Updates to the Terms
             </h2>
             <p className="text-base leading-relaxed">
@@ -97,15 +96,15 @@ export default function TermsPage() {
             </p>
           </div>
 
-          <div className="space-y-4 border-t border-slate-200 pt-8">
-            <h2 className="text-2xl font-bold font-heading text-[#0B1220]">
+          <div className="space-y-4 border-t border-[#DBE5F0] pt-8">
+            <h2 className="text-2xl font-bold font-heading text-[#071B38]">
               8. Contact Information
             </h2>
             <p className="text-base leading-relaxed">
               For questions regarding these Terms of Use, please reach out via:
             </p>
-            <div className="p-5 rounded-xl bg-[#F3F6FA] border border-slate-200 text-sm space-y-1">
-              <strong className="text-[#0B1220] block">{SITE_CONFIG.name}</strong>
+            <div className="p-5 rounded-xl bg-[#F8FAFC] border border-[#DBE5F0] text-sm space-y-1">
+              <strong className="text-[#071B38] block">{SITE_CONFIG.name}</strong>
               <p>Email: {SITE_CONFIG.email}</p>
               <p>Phone: {SITE_CONFIG.phone}</p>
               <p>Address: {SITE_CONFIG.address}</p>
