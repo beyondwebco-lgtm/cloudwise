@@ -1,0 +1,6 @@
+const n=document.querySelector('nav'),b=document.getElementById('mt');b.onclick=()=>{n.classList.toggle('o');b.setAttribute('aria-expanded',n.classList.contains('o'))};
+const f=document.getElementById('cf');if(f){f.addEventListener('submit',async e=>{e.preventDefault();let ok=true;const m=document.getElementById('msg');
+f.querySelectorAll('[required]').forEach(i=>{const er=document.getElementById(i.id+'-e');let bad=!i.checkValidity();er.textContent=bad?(i.type==='email'?'Enter a valid business email.':'This field is required.'):'';i.setAttribute('aria-invalid',bad);if(bad)ok=false});
+if(!ok){m.textContent='Please fix the highlighted fields.';return}if(f.website.value)return;
+const ep=f.dataset.endpoint;if(!ep){m.textContent='This form is not connected yet. See README (Contact form) to add a form service endpoint.';return}
+m.textContent='Sending…';try{const r=await fetch(ep,{method:'POST',body:new FormData(f),headers:{Accept:'application/json'}});if(r.ok){m.textContent='Thank you. We will respond to your request soon.';f.reset()}else throw 0}catch(_){m.textContent='Sending failed. Please try again later.'}})}
