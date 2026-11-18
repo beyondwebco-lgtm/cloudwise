@@ -54,13 +54,26 @@
 /* Animated subtle flowing energy line */
 .flowing-circuit {
   stroke-dasharray: 8 12;
-  animation: flowLine 24s linear infinite;
+  animation: flowLine 20s linear infinite;
 }
 
 @keyframes flowLine {
   to {
     stroke-dashoffset: -400;
   }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 6px rgba(0, 240, 255, 0.5)) drop-shadow(0 0 12px rgba(59, 130, 246, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 14px rgba(0, 240, 255, 0.8)) drop-shadow(0 0 24px rgba(139, 92, 246, 0.5));
+  }
+}
+
+.neon-pulse {
+  animation: pulseGlow 4s ease-in-out infinite;
 }
 
 /* Minimalist corporate grid patterns */

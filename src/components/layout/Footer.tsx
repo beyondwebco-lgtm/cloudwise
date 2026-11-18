@@ -23,8 +23,8 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
           {/* Brand & Mission Column (Spans 2 cols on lg) */}
           <div className="lg:col-span-2 space-y-6">
-            <Link href="/" className="inline-block group">
-              <Logo variant="dark" height={38} />
+            <Link href="/" className="inline-block group focus:outline-none focus:ring-2 focus:ring-[#60A5FA] rounded-lg p-0.5">
+              <Logo variant="dark" height={44} />
             </Link>
 
             <p className="text-sm text-slate-300 max-w-sm leading-relaxed">

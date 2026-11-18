@@ -50,8 +50,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/logo.png",
-        width: 1200,
-        height: 400,
+        width: 907,
+        height: 163,
         alt: "CloudWize Consulting Services Logo",
       },
     ],
@@ -65,9 +65,10 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.png", type: "image/png" },
       { url: "/favicon.ico" },
     ],
-    apple: "/logo.png",
+    apple: "/logo-symbol.png",
   },
 };
 

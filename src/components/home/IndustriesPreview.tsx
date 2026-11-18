@@ -15,15 +15,47 @@ import { INDUSTRIES_DATA } from "@/data/content";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function IndustriesPreview() {
-  const iconMap: Record<string, React.ReactNode> = {
-    HeartPulse: <HeartPulse className="w-5 h-5 text-[#2563EB]" />,
-    Landmark: <Landmark className="w-5 h-5 text-[#2563EB]" />,
-    ShieldAlert: <ShieldAlert className="w-5 h-5 text-[#2563EB]" />,
-    Factory: <Factory className="w-5 h-5 text-[#2563EB]" />,
-    ShoppingBag: <ShoppingBag className="w-5 h-5 text-[#2563EB]" />,
-    Briefcase: <Briefcase className="w-5 h-5 text-[#2563EB]" />,
-    Cpu: <Cpu className="w-5 h-5 text-[#2563EB]" />,
-    Rocket: <Rocket className="w-5 h-5 text-[#2563EB]" />,
+  const iconMap: Record<string, { icon: React.ReactNode; bg: string; border: string }> = {
+    HeartPulse: {
+      icon: <HeartPulse className="w-5 h-5 text-[#E11D48]" />,
+      bg: "bg-[#FFE4E6]",
+      border: "border-[#FDA4AF]/40",
+    },
+    Landmark: {
+      icon: <Landmark className="w-5 h-5 text-[#059669]" />,
+      bg: "bg-[#D1FAE5]",
+      border: "border-[#6EE7B7]/40",
+    },
+    ShieldAlert: {
+      icon: <ShieldAlert className="w-5 h-5 text-[#2563EB]" />,
+      bg: "bg-[#DBEAFE]",
+      border: "border-[#93C5FD]/40",
+    },
+    Factory: {
+      icon: <Factory className="w-5 h-5 text-[#D97706]" />,
+      bg: "bg-[#FEF3C7]",
+      border: "border-[#FDE68A]/40",
+    },
+    ShoppingBag: {
+      icon: <ShoppingBag className="w-5 h-5 text-[#7C3AED]" />,
+      bg: "bg-[#EDE9FE]",
+      border: "border-[#C4B5FD]/40",
+    },
+    Briefcase: {
+      icon: <Briefcase className="w-5 h-5 text-[#0284C7]" />,
+      bg: "bg-[#E0F2FE]",
+      border: "border-[#7DD3FC]/40",
+    },
+    Cpu: {
+      icon: <Cpu className="w-5 h-5 text-[#0891B2]" />,
+      bg: "bg-[#CFFAFE]",
+      border: "border-[#67E8F9]/40",
+    },
+    Rocket: {
+      icon: <Rocket className="w-5 h-5 text-[#9333EA]" />,
+      bg: "bg-[#F3E8FF]",
+      border: "border-[#D8B4FE]/40",
+    },
   };
 
   return (
@@ -38,38 +70,46 @@ export function IndustriesPreview() {
 
         {/* 8 Sector Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {INDUSTRIES_DATA.map((ind) => (
-            <div
-              key={ind.id}
-              className="group bg-white rounded-2xl p-6 border border-[#DBE5F0] shadow-subtle hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
-            >
-              <div>
-                <div className="w-10 h-10 rounded-xl bg-[#EFF6FF] border border-[#DBE5F0] flex items-center justify-center mb-4 group-hover:bg-[#2563EB]/10 transition-colors">
-                  {iconMap[ind.icon]}
+          {INDUSTRIES_DATA.map((ind) => {
+            const conf = iconMap[ind.icon] || {
+              icon: <Cpu className="w-5 h-5 text-[#2563EB]" />,
+              bg: "bg-[#EFF6FF]",
+              border: "border-[#DBE5F0]",
+            };
+
+            return (
+              <div
+                key={ind.id}
+                className="group bg-white rounded-2xl p-6 border border-[#DBE5F0] shadow-subtle hover:shadow-card-hover hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between"
+              >
+                <div>
+                  <div className={`w-11 h-11 rounded-xl ${conf.bg} border ${conf.border} flex items-center justify-center mb-4 group-hover:scale-105 transition-transform shadow-sm`}>
+                    {conf.icon}
+                  </div>
+
+                  <h3 className="text-base font-bold text-[#071B38] font-heading mb-2 group-hover:text-[#2563EB] transition-colors">
+                    {ind.name}
+                  </h3>
+
+                  <p className="text-xs text-[#475569] line-clamp-3 leading-relaxed mb-4">
+                    <span className="font-semibold text-[#0F172A]">Challenge: </span>
+                    {ind.challenge}
+                  </p>
                 </div>
 
-                <h3 className="text-base font-bold text-[#071B38] font-heading mb-2 group-hover:text-[#2563EB] transition-colors">
-                  {ind.name}
-                </h3>
-
-                <p className="text-xs text-[#475569] line-clamp-3 leading-relaxed mb-4">
-                  <span className="font-semibold text-[#0F172A]">Challenge: </span>
-                  {ind.challenge}
-                </p>
+                <div className="pt-3 border-t border-[#DBE5F0]/60 flex flex-wrap gap-1.5">
+                  {ind.coreServices.slice(0, 2).map((srv) => (
+                    <span
+                      key={srv}
+                      className="text-[10px] font-medium bg-[#EFF6FF] text-[#123B73] px-2.5 py-0.5 rounded-full border border-[#DBE5F0]"
+                    >
+                      {srv}
+                    </span>
+                  ))}
+                </div>
               </div>
-
-              <div className="pt-3 border-t border-[#DBE5F0]/60 flex flex-wrap gap-1.5">
-                {ind.coreServices.slice(0, 2).map((srv) => (
-                  <span
-                    key={srv}
-                    className="text-[10px] font-medium bg-[#EFF6FF] text-[#123B73] px-2.5 py-0.5 rounded-full border border-[#DBE5F0]"
-                  >
-                    {srv}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Centered Action Link */}
