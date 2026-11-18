@@ -139,18 +139,18 @@ export function AuditReadinessQuiz() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-slate-200">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-slate-200">
               <div className="space-y-1.5">
-                <span className="text-slate-400 font-semibold uppercase tracking-wider text-[10px]">
+                <span className="text-slate-300 font-semibold uppercase tracking-wider text-xs">
                   Primary Architectural Focus
                 </span>
                 <p className="font-medium text-white">{recommendation.focus}</p>
               </div>
               <div className="space-y-1.5">
-                <span className="text-slate-400 font-semibold uppercase tracking-wider text-[10px]">
+                <span className="text-slate-300 font-semibold uppercase tracking-wider text-xs">
                   Consulting Deliverables Included
                 </span>
-                <p className="text-slate-300">{recommendation.advisoryScope}</p>
+                <p className="text-slate-200/90">{recommendation.advisoryScope}</p>
               </div>
             </div>
 

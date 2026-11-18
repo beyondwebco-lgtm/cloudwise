@@ -45,7 +45,7 @@ export function HeroSection() {
             </div>
 
             {/* Large Editorial Headline with Multi-Color Shimmer */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight font-heading leading-[1.1] text-white">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] xl:text-[58px] font-extrabold tracking-tight font-heading leading-[1.12] text-white">
               Transform Your Business with{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#38BDF8] via-[#818CF8] to-[#C084FC]">
                 Technology, Talent
@@ -54,7 +54,7 @@ export function HeroSection() {
             </h1>
 
             {/* Refined Supporting Paragraph */}
-            <p className="text-base sm:text-lg md:text-xl text-slate-200 font-light leading-relaxed max-w-2xl">
+            <p className="text-base sm:text-lg md:text-[19px] text-slate-200/90 font-normal leading-relaxed max-w-2xl">
               CloudWize Consulting Services helps organizations modernize technology, deliver complex projects, strengthen compliance, and build high-performing teams through practical consulting solutions.
             </p>
 
@@ -72,7 +72,7 @@ export function HeroSection() {
 
               <a
                 href="#services"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-medium text-slate-200 hover:text-white bg-[#123B73]/70 hover:bg-[#123B73] rounded-xl border border-[#38BDF8]/30 hover:border-[#38BDF8] transition-all duration-200 backdrop-blur-sm"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-semibold text-slate-200 hover:text-white bg-[#123B73]/70 hover:bg-[#123B73] rounded-xl border border-[#38BDF8]/30 hover:border-[#38BDF8] transition-all duration-200 backdrop-blur-sm"
               >
                 <Layers className="w-4 h-4 text-[#38BDF8]" />
                 <span>Explore Our Services</span>
@@ -80,16 +80,16 @@ export function HeroSection() {
             </div>
 
             {/* Trust Indicators with Vivid Neon Accents */}
-            <div className="pt-6 border-t border-white/10 grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs">
-              <div className="flex items-center gap-2 text-slate-300">
+            <div className="pt-6 border-t border-white/10 grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs sm:text-sm font-medium">
+              <div className="flex items-center gap-2 text-slate-200">
                 <CheckCircle2 className="w-4 h-4 text-[#34D399] shrink-0" />
                 <span>Vendor-Neutral Advisory</span>
               </div>
-              <div className="flex items-center gap-2 text-slate-300">
+              <div className="flex items-center gap-2 text-slate-200">
                 <CheckCircle2 className="w-4 h-4 text-[#38BDF8] shrink-0" />
                 <span>Zero Shelfware Reports</span>
               </div>
-              <div className="flex items-center gap-2 text-slate-300">
+              <div className="flex items-center gap-2 text-slate-200">
                 <CheckCircle2 className="w-4 h-4 text-[#A78BFA] shrink-0" />
                 <span>Disciplined Governance</span>
               </div>

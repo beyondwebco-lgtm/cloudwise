@@ -35,7 +35,7 @@ export function SectionHeading({
         </div>
       )}
       <h2
-        className={`text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight font-heading ${
+        className={`text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-extrabold tracking-tight leading-[1.2] font-heading ${
           isDark ? "text-white" : "text-[#071B38]"
         }`}
       >
@@ -44,7 +44,7 @@ export function SectionHeading({
       {description && (
         <p
           className={`mt-4 text-base sm:text-lg leading-relaxed ${
-            isDark ? "text-slate-300" : "text-[#475569]"
+            isDark ? "text-slate-200/90" : "text-[#475569]"
           }`}
         >
           {description}

@@ -20,7 +20,7 @@ export function CtaSection() {
           Ready to Move Your Business Forward?
         </h2>
 
-        <p className="text-base sm:text-xl text-slate-300 leading-relaxed max-w-2xl mx-auto font-light">
+        <p className="text-base sm:text-lg lg:text-xl text-slate-200/90 leading-relaxed max-w-2xl mx-auto font-normal">
           Let's discuss your business challenges and identify practical opportunities for technology modernization, disciplined project delivery, and governance improvement.
         </p>
 

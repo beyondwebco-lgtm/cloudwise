@@ -87,7 +87,7 @@ export default function RootLayout({
     "description": SITE_CONFIG.description,
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Bangalore",
+      "addressLocality": "Hyderabad",
       "addressCountry": "IN"
     },
     "sameAs": [

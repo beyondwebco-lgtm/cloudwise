@@ -87,12 +87,12 @@ export function WhyCloudWize() {
                     {item.title}
                   </h3>
 
-                  <p className="text-sm text-[#475569] leading-relaxed">
+                  <p className="text-sm sm:text-[15px] text-[#475569] leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
 
-                <div className={`mt-6 pt-4 border-t border-[#DBE5F0]/60 flex items-center gap-2 text-xs font-semibold ${conf.text}`}>
+                <div className={`mt-6 pt-4 border-t border-[#DBE5F0]/60 flex items-center gap-2 text-xs sm:text-[13px] font-semibold ${conf.text}`}>
                   <Check className="w-4 h-4" />
                   <span>Verified Consulting Principle</span>
                 </div>

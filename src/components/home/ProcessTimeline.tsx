@@ -102,7 +102,7 @@ export function ProcessTimeline() {
                 {ENGAGEMENT_STEPS[activeStep].title}
               </h3>
 
-              <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-light">
+              <p className="text-base sm:text-lg text-slate-200/95 leading-relaxed font-normal">
                 {ENGAGEMENT_STEPS[activeStep].desc}
               </p>
 

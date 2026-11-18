@@ -175,7 +175,7 @@ export function ContactForm() {
                   placeholder="e.g. Anand Sharma"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className={`w-full bg-[#F8FAFC] border rounded-xl pl-10 pr-4 py-3 text-sm text-[#0F172A] placeholder-slate-400 focus:outline-none focus:ring-2 ${
+                  className={`w-full bg-[#F8FAFC] border rounded-xl pl-10 pr-4 py-3 text-base sm:text-sm text-[#0F172A] placeholder-slate-400 focus:outline-none focus:ring-2 ${
                     errors.name
                       ? "border-red-400 focus:ring-red-400"
                       : "border-[#DBE5F0] focus:ring-[#2563EB]"
@@ -207,7 +207,7 @@ export function ContactForm() {
                   placeholder="anand@company.com"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className={`w-full bg-[#F8FAFC] border rounded-xl pl-10 pr-4 py-3 text-sm text-[#0F172A] placeholder-slate-400 focus:outline-none focus:ring-2 ${
+                  className={`w-full bg-[#F8FAFC] border rounded-xl pl-10 pr-4 py-3 text-base sm:text-sm text-[#0F172A] placeholder-slate-400 focus:outline-none focus:ring-2 ${
                     errors.email
                       ? "border-red-400 focus:ring-red-400"
                       : "border-[#DBE5F0] focus:ring-[#2563EB]"
@@ -239,7 +239,7 @@ export function ContactForm() {
                   placeholder="Company Inc."
                   value={formData.company}
                   onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                  className={`w-full bg-[#F8FAFC] border rounded-xl pl-10 pr-4 py-3 text-sm text-[#0F172A] placeholder-slate-400 focus:outline-none focus:ring-2 ${
+                  className={`w-full bg-[#F8FAFC] border rounded-xl pl-10 pr-4 py-3 text-base sm:text-sm text-[#0F172A] placeholder-slate-400 focus:outline-none focus:ring-2 ${
                     errors.company
                       ? "border-red-400 focus:ring-red-400"
                       : "border-[#DBE5F0] focus:ring-[#2563EB]"
@@ -270,7 +270,7 @@ export function ContactForm() {
                   placeholder="VP of Engineering / CTO"
                   value={formData.title}
                   onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                  className="w-full bg-[#F8FAFC] border border-[#DBE5F0] rounded-xl pl-10 pr-4 py-3 text-sm text-[#0F172A] placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#2563EB]"
+                  className="w-full bg-[#F8FAFC] border border-[#DBE5F0] rounded-xl pl-10 pr-4 py-3 text-base sm:text-sm text-[#0F172A] placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#2563EB]"
                 />
               </div>
             </div>
@@ -292,7 +292,7 @@ export function ContactForm() {
                   placeholder="e.g. India, United States, UK"
                   value={formData.country}
                   onChange={(e) => setFormData({ ...formData, country: e.target.value })}
-                  className={`w-full bg-[#F8FAFC] border rounded-xl pl-10 pr-4 py-3 text-sm text-[#0F172A] placeholder-slate-400 focus:outline-none focus:ring-2 ${
+                  className={`w-full bg-[#F8FAFC] border rounded-xl pl-10 pr-4 py-3 text-base sm:text-sm text-[#0F172A] placeholder-slate-400 focus:outline-none focus:ring-2 ${
                     errors.country
                       ? "border-red-400 focus:ring-red-400"
                       : "border-[#DBE5F0] focus:ring-[#2563EB]"
@@ -320,7 +320,7 @@ export function ContactForm() {
                 required
                 value={formData.svc}
                 onChange={(e) => setFormData({ ...formData, svc: e.target.value })}
-                className={`w-full bg-[#F8FAFC] border rounded-xl px-4 py-3 text-sm text-[#0F172A] focus:outline-none focus:ring-2 ${
+                className={`w-full bg-[#F8FAFC] border rounded-xl px-4 py-3 text-base sm:text-sm text-[#0F172A] focus:outline-none focus:ring-2 ${
                   errors.svc
                     ? "border-red-400 focus:ring-red-400"
                     : "border-[#DBE5F0] focus:ring-[#2563EB]"
@@ -358,7 +358,7 @@ export function ContactForm() {
                 placeholder="e.g. ₹25L - ₹50L or $40,000"
                 value={formData.budget}
                 onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                className="w-full bg-[#F8FAFC] border border-[#DBE5F0] rounded-xl pl-10 pr-4 py-3 text-sm text-[#0F172A] placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#2563EB]"
+                className="w-full bg-[#F8FAFC] border border-[#DBE5F0] rounded-xl pl-10 pr-4 py-3 text-base sm:text-sm text-[#0F172A] placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#2563EB]"
               />
             </div>
           </div>
@@ -378,7 +378,7 @@ export function ContactForm() {
               placeholder="Outline your timeline, infrastructure stack, audit framework (e.g. SOC 2 or ISO 27001), or project milestones..."
               value={formData.req}
               onChange={(e) => setFormData({ ...formData, req: e.target.value })}
-              className={`w-full bg-[#F8FAFC] border rounded-xl p-4 text-sm text-[#0F172A] placeholder-slate-400 focus:outline-none focus:ring-2 ${
+              className={`w-full bg-[#F8FAFC] border rounded-xl p-4 text-base sm:text-sm text-[#0F172A] placeholder-slate-400 focus:outline-none focus:ring-2 ${
                 errors.req
                   ? "border-red-400 focus:ring-red-400"
                   : "border-[#DBE5F0] focus:ring-[#2563EB]"

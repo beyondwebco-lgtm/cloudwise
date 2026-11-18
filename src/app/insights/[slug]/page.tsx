@@ -85,7 +85,7 @@ export default async function InsightArticlePage({ params }: PageProps) {
               {article.title}
             </h1>
 
-            <p className="text-lg text-slate-200 font-light leading-relaxed">
+            <p className="text-lg sm:text-xl text-slate-200/90 font-normal leading-relaxed">
               {article.summary}
             </p>
           </div>
@@ -103,7 +103,7 @@ export default async function InsightArticlePage({ params }: PageProps) {
           </div>
           <ul className="space-y-3">
             {article.takeaways.map((item, idx) => (
-              <li key={idx} className="flex items-start gap-3 text-sm text-[#0F172A] leading-relaxed">
+              <li key={idx} className="flex items-start gap-3 text-sm sm:text-base text-[#0F172A] leading-relaxed">
                 <CheckCircle2 className="w-4 h-4 text-[#2563EB] shrink-0 mt-1" />
                 <span>{item}</span>
               </li>
@@ -119,7 +119,7 @@ export default async function InsightArticlePage({ params }: PageProps) {
                 {sec.heading}
               </h2>
               {sec.paragraphs.map((p, pIdx) => (
-                <p key={pIdx} className="text-base text-[#475569] leading-relaxed">
+                <p key={pIdx} className="text-base sm:text-[17px] text-[#334155] leading-relaxed">
                   {p}
                 </p>
               ))}

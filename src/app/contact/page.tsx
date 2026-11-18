@@ -80,7 +80,7 @@ export default function ContactPage() {
                           Telephone Advisory
                         </span>
                         <a
-                          href={`tel:${SITE_CONFIG.phone}`}
+                          href={SITE_CONFIG.phoneHref}
                           className="text-white hover:text-[#60A5FA] transition-colors font-medium text-sm"
                         >
                           {SITE_CONFIG.phone}
@@ -92,10 +92,10 @@ export default function ContactPage() {
                       <MapPin className="w-5 h-5 text-[#60A5FA] shrink-0 mt-0.5" />
                       <div>
                         <span className="block text-xs text-slate-400 font-semibold uppercase tracking-wider">
-                          Operating Headquarters
+                          Registered Office
                         </span>
                         <span className="text-white font-medium text-sm">
-                          {SITE_CONFIG.address}
+                          {SITE_CONFIG.registeredOffice}
                         </span>
                       </div>
                     </div>
@@ -104,17 +104,12 @@ export default function ContactPage() {
                       <Linkedin className="w-5 h-5 text-[#60A5FA] shrink-0 mt-0.5" />
                       <div>
                         <span className="block text-xs text-slate-400 font-semibold uppercase tracking-wider">
-                          Corporate Profile
+                          LinkedIn Network
                         </span>
-                        <a
-                          href={SITE_CONFIG.linkedin}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-[#60A5FA] hover:text-white transition-colors hover:underline inline-flex items-center gap-1 font-medium text-sm"
-                        >
-                          <span>Connect on LinkedIn</span>
-                          <ArrowUpRight className="w-3.5 h-3.5" />
-                        </a>
+                        <span className="text-slate-300 font-medium text-sm inline-flex items-center gap-1.5 mt-0.5">
+                          <span className="w-2 h-2 rounded-full bg-[#60A5FA] animate-pulse" />
+                          Official Profile in Creation
+                        </span>
                       </div>
                     </div>
                   </div>

@@ -30,7 +30,7 @@ export function PageHero({
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Breadcrumbs */}
         <nav
-          className="flex items-center gap-2 text-xs font-medium text-slate-300 mb-6"
+          className="flex items-center gap-2 text-xs sm:text-sm font-medium text-slate-300 mb-6"
           aria-label="Breadcrumb"
         >
           {breadcrumbs.map((crumb, idx) => {
@@ -62,7 +62,7 @@ export function PageHero({
             {title}
           </h1>
 
-          <p className="text-lg sm:text-xl text-slate-200 leading-relaxed font-light max-w-3xl">
+          <p className="text-base sm:text-lg lg:text-xl text-slate-200/90 leading-relaxed font-normal max-w-3xl">
             {description}
           </p>
 

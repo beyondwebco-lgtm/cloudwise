@@ -87,11 +87,11 @@ export function IndustriesPreview() {
                     {conf.icon}
                   </div>
 
-                  <h3 className="text-base font-bold text-[#071B38] font-heading mb-2 group-hover:text-[#2563EB] transition-colors">
+                  <h3 className="text-lg font-bold text-[#071B38] font-heading mb-2.5 group-hover:text-[#2563EB] transition-colors">
                     {ind.name}
                   </h3>
 
-                  <p className="text-xs text-[#475569] line-clamp-3 leading-relaxed mb-4">
+                  <p className="text-sm text-[#475569] line-clamp-3 leading-relaxed mb-4">
                     <span className="font-semibold text-[#0F172A]">Challenge: </span>
                     {ind.challenge}
                   </p>
@@ -101,7 +101,7 @@ export function IndustriesPreview() {
                   {ind.coreServices.slice(0, 2).map((srv) => (
                     <span
                       key={srv}
-                      className="text-[10px] font-medium bg-[#EFF6FF] text-[#123B73] px-2.5 py-0.5 rounded-full border border-[#DBE5F0]"
+                      className="text-xs font-medium bg-[#EFF6FF] text-[#123B73] px-2.5 py-1 rounded-full border border-[#DBE5F0]"
                     >
                       {srv}
                     </span>

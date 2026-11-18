@@ -46,11 +46,15 @@ export const SITE_CONFIG = {
   tagline: "Technology. Transformation. Talent. Trust.",
   description:
     "CloudWize Consulting Services provides IT and cloud consulting, structured project management, HR workforce solutions, and IT audit readiness for Indian and international enterprises.",
-  domain: "https://www.cloudwizeconsulting.com",
-  email: "contact@cloudwizeconsulting.com",
-  phone: "+91 (0) 80 4000 0000",
-  address: "Bangalore, India · Serving Global Enterprises",
-  linkedin: "https://www.linkedin.com/company/cloudwize-consulting",
+  domain: "https://www.cloudwize.in",
+  email: "contact@cloudwize.in",
+  phone: "+91 99666 43516",
+  phoneRaw: "9966643516",
+  phoneHref: "tel:+919966643516",
+  address: "Hyderabad, India",
+  registeredOffice: "Hyderabad, India",
+  linkedin: "#",
+  linkedinLabel: "Profile in Creation",
 };
 
 export const CORE_SERVICES: ServiceItem[] = [
