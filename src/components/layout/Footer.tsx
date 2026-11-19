@@ -1,11 +1,11 @@
 import React from "react";
 import Link from "next/link";
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Linkedin, 
-  ShieldCheck, 
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Linkedin,
+  ShieldCheck,
   ChevronRight
 } from "lucide-react";
 import { CORE_SERVICES, SITE_CONFIG } from "@/data/content";
@@ -22,11 +22,11 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
           {/* Brand & Mission Column (Spans 2 cols on lg) */}
           <div className="lg:col-span-2 space-y-6">
-            <Link 
-              href="/" 
+            <Link
+              href="/"
               className="inline-block group focus:outline-none focus:ring-2 focus:ring-[#2563EB] rounded-lg p-0.5"
             >
-              <Logo variant="light" height={44} />
+              <Logo variant="light" height={60} />
             </Link>
 
             <p className="text-sm text-[#475569] max-w-sm leading-relaxed">

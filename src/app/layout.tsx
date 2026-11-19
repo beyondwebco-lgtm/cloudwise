@@ -50,9 +50,9 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/logo.png",
-        width: 907,
-        height: 163,
-        alt: "CloudWize Consulting Services Logo",
+        width: 970,
+        height: 574,
+        alt: "Cloudwize Consulting Logo",
       },
     ],
   },

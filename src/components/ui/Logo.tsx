@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 
 interface LogoProps {
-  variant?: "dark" | "light"; // "dark" for dark backgrounds (navbar/footer), "light" for light backgrounds
+  variant?: "dark" | "light"; // "dark" for dark backgrounds (navbar), "light" for light backgrounds (footer)
   symbolOnly?: boolean;
   className?: string;
   height?: number;
@@ -12,15 +12,15 @@ export function Logo({
   variant = "dark",
   symbolOnly = false,
   className = "",
-  height = 40,
+  height = 44,
 }: LogoProps) {
   if (symbolOnly) {
     const src = "/logo-symbol.png";
-    const width = Math.round(height * (284 / 163));
+    const width = Math.round(height * (970 / 373));
     return (
       <Image
         src={src}
-        alt="CloudWize Symbol"
+        alt="Cloudwize Symbol"
         width={width}
         height={height}
         className={`object-contain h-auto ${className}`}
@@ -29,14 +29,14 @@ export function Logo({
     );
   }
 
-  // Full Horizontal 3D Ribbon Logo (907 x 163)
+  // Full Stacked Logo (970 x 574)
   const src = variant === "dark" ? "/logo-white.png" : "/logo.png";
-  const width = Math.round(height * (907 / 163));
+  const width = Math.round(height * (970 / 574));
 
   return (
     <Image
       src={src}
-      alt="CloudWize Consulting Services"
+      alt="Cloudwize Consulting"
       width={width}
       height={height}
       className={`object-contain h-auto ${className}`}
