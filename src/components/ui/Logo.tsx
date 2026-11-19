@@ -23,7 +23,7 @@ export function Logo({
         alt="Cloudwize Symbol"
         width={width}
         height={height}
-        className={`object-contain h-auto ${className}`}
+        className={`object-contain ${className || "h-auto w-auto"}`}
         priority
       />
     );
@@ -39,7 +39,7 @@ export function Logo({
       alt="Cloudwize Consulting"
       width={width}
       height={height}
-      className={`object-contain h-auto ${className}`}
+      className={`object-contain ${className || "h-auto w-auto"}`}
       priority
     />
   );

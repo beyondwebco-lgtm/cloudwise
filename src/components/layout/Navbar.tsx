@@ -58,17 +58,21 @@ export function Navbar() {
     <header
       className={`sticky top-0 z-50 w-full transition-all duration-300 ${
         isScrolled
-          ? "bg-[#071B38]/95 backdrop-blur-md border-b border-[#123B73] shadow-lg shadow-[#071B38]/20 py-3"
-          : "bg-[#071B38] border-b border-white/10 py-4"
+          ? "bg-[#071B38]/95 backdrop-blur-md border-b border-[#123B73] shadow-lg shadow-[#071B38]/20 py-2 sm:py-2.5"
+          : "bg-[#071B38] border-b border-white/10 py-3 sm:py-3.5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Brand Logo */}
         <Link
           href="/"
-          className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-[#60A5FA] rounded-lg p-1"
+          className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-[#60A5FA] rounded-lg p-0.5"
         >
-          <Logo variant="dark" height={48} />
+          <Logo 
+            variant="dark" 
+            height={64} 
+            className="h-12 sm:h-14 lg:h-16 w-auto transition-transform duration-200 group-hover:scale-[1.02]" 
+          />
         </Link>
 
         {/* Desktop Navigation */}
