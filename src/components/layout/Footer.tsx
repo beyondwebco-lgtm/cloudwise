@@ -9,7 +9,6 @@ import {
   ChevronRight
 } from "lucide-react";
 import { CORE_SERVICES, SITE_CONFIG } from "@/data/content";
-import { Logo } from "@/components/ui/Logo";
 
 export function Footer() {
   return (
@@ -22,16 +21,17 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
           {/* Brand & Mission Column (Spans 2 cols on lg) */}
           <div className="lg:col-span-2 space-y-6">
-            <Link
-              href="/"
-              className="inline-block group focus:outline-none focus:ring-2 focus:ring-[#2563EB] rounded-lg p-0.5"
-            >
-              <Logo variant="light" height={60} />
-            </Link>
-
-            <p className="text-sm text-[#475569] max-w-sm leading-relaxed">
-              Practical technology consulting, structured project delivery, workforce solutions, and governance advisory for organizations navigating digital complexity.
-            </p>
+            <div>
+              <Link
+                href="/"
+                className="text-xl font-extrabold font-heading text-[#071B38] hover:text-[#2563EB] transition-colors tracking-tight inline-block mb-3"
+              >
+                {SITE_CONFIG.name}
+              </Link>
+              <p className="text-sm text-[#475569] max-w-sm leading-relaxed">
+                Practical technology consulting, structured project delivery, workforce solutions, and governance advisory for organizations navigating digital complexity.
+              </p>
+            </div>
 
             <div className="flex items-center gap-2 text-xs font-semibold text-[#123B73] bg-[#EFF6FF] px-3.5 py-1.5 rounded-full border border-[#BFDBFE] w-fit shadow-xs">
               <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
