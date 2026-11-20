@@ -14,6 +14,7 @@ import {
   Briefcase,
   DollarSign
 } from "lucide-react";
+import { SITE_CONFIG } from "@/data/content";
 
 interface FormState {
   name: string;
@@ -45,6 +46,7 @@ export function ContactForm() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [feedbackMsg, setFeedbackMsg] = useState("");
+  const [lastMailto, setLastMailto] = useState("");
 
   const servicesList = [
     "IT Consulting",
@@ -56,61 +58,55 @@ export function ContactForm() {
     "Other",
   ];
 
-  const validate = () => {
-    const errs: Record<string, string> = {};
-    if (!formData.name.trim()) errs.name = "Full name is required.";
-    if (!formData.email.trim()) {
-      errs.email = "Business email is required.";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      errs.email = "Please enter a valid business email address.";
-    }
-    if (!formData.company.trim()) errs.company = "Company name is required.";
-    if (!formData.country.trim()) errs.country = "Country is required.";
-    if (!formData.svc) errs.svc = "Please select a service of interest.";
-    if (!formData.req.trim()) errs.req = "Please describe your project requirements.";
-    if (!formData.ok) errs.ok = "You must consent to CloudWize contacting you.";
-    return errs;
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (formData.website) {
-      return;
+      return; // Honeypot trap
     }
 
-    const validationErrors = validate();
-    if (Object.keys(validationErrors).length > 0) {
-      setErrors(validationErrors);
-      setFeedbackMsg("Please complete all required fields correctly.");
-      setStatus("error");
-      return;
-    }
+    // Build pre-filled email subject and body for the default mailing app
+    const serviceName = formData.svc || "General Technology Advisory";
+    const clientIdentifier = formData.company || formData.name || "Executive Client";
+    const subject = encodeURIComponent(
+      `Consultation Request: ${serviceName} - ${clientIdentifier}`
+    );
 
+    const bodyLines = [
+      "Hello CloudWize Consulting Team,",
+      "",
+      "I would like to request an executive consultation.",
+      "",
+      "--- Client & Organization Details ---",
+      `Full Name: ${formData.name || "[Your Name]"}`,
+      `Business Email: ${formData.email || "[Your Email]"}`,
+      `Company Name: ${formData.company || "[Your Company]"}`,
+      `Job Title: ${formData.title || "Not specified"}`,
+      `Country: ${formData.country || "Not specified"}`,
+      `Service of Interest: ${serviceName}`,
+      `Estimated Budget: ${formData.budget || "Not specified"}`,
+      "",
+      "--- Project Requirements & Objectives ---",
+      formData.req || "[Please describe your infrastructure, cloud, PMO, or audit readiness requirements here]",
+      "",
+      "---",
+      "Submitted via CloudWize Consultation Portal (https://www.cloudwize.in/contact)"
+    ];
+
+    const body = encodeURIComponent(bodyLines.join("\n"));
+    const mailtoUrl = `mailto:${SITE_CONFIG.email}?subject=${subject}&body=${body}`;
+
+    setLastMailto(mailtoUrl);
     setErrors({});
-    setStatus("submitting");
-    setFeedbackMsg("Submitting your consultation request...");
+    setStatus("success");
+    setFeedbackMsg(
+      `Your device's default email application has been launched with your request addressed to ${SITE_CONFIG.email}.`
+    );
 
+    // Launch default email client
     try {
-      await new Promise((resolve) => setTimeout(resolve, 800));
-      setStatus("success");
-      setFeedbackMsg(
-        "Thank you. Your consultation request has been received. A senior CloudWize partner will review your requirements and reach out within 1 business day."
-      );
-      setFormData({
-        name: "",
-        email: "",
-        company: "",
-        title: "",
-        country: "",
-        svc: "",
-        budget: "",
-        req: "",
-        website: "",
-        ok: false,
-      });
+      window.location.href = mailtoUrl;
     } catch {
-      setStatus("error");
-      setFeedbackMsg("Submission failed. Please email us directly or try again later.");
+      window.open(mailtoUrl, "_self");
     }
   };
 
@@ -126,22 +122,46 @@ export function ContactForm() {
       </div>
 
       {status === "success" ? (
-        <div className="p-8 rounded-2xl bg-[#EFF6FF] border border-[#BFDBFE] text-center space-y-4">
-          <div className="w-14 h-14 rounded-full bg-[#DBEAFE] text-[#2563EB] flex items-center justify-center mx-auto">
-            <CheckCircle2 className="w-8 h-8" />
+        <div className="p-8 sm:p-10 rounded-2xl bg-[#EFF6FF] border border-[#BFDBFE] text-center space-y-4">
+          <div className="w-16 h-16 rounded-full bg-[#DBEAFE] text-[#2563EB] flex items-center justify-center mx-auto shadow-sm">
+            <CheckCircle2 className="w-9 h-9" />
           </div>
-          <h4 className="text-xl font-bold font-heading text-[#071B38]">
-            Consultation Request Received
+          <h4 className="text-2xl font-bold font-heading text-[#071B38]">
+            Opening Your Email App
           </h4>
-          <p className="text-sm text-[#1E3A8A] max-w-md mx-auto leading-relaxed">
-            {feedbackMsg}
+          <p className="text-sm text-[#1E3A8A] max-w-lg mx-auto leading-relaxed">
+            Your default mailing app has been opened with your inquiry addressed to{" "}
+            <strong className="font-bold text-[#071B38]">{SITE_CONFIG.email}</strong>.
           </p>
-          <button
-            onClick={() => setStatus("idle")}
-            className="mt-4 px-6 py-2.5 rounded-xl text-xs font-semibold text-[#1E3A8A] bg-white border border-[#BFDBFE] shadow-sm hover:bg-[#EFF6FF]"
-          >
-            Submit another inquiry
-          </button>
+          <div className="pt-3 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <a
+              href={lastMailto || `mailto:${SITE_CONFIG.email}`}
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold text-white bg-[#2563EB] hover:bg-[#1D4ED8] shadow-md transition-all w-full sm:w-auto"
+            >
+              <Mail className="w-4 h-4" />
+              <span>Launch Email App Again</span>
+            </a>
+            <button
+              onClick={() => {
+                setStatus("idle");
+                setFormData({
+                  name: "",
+                  email: "",
+                  company: "",
+                  title: "",
+                  country: "",
+                  svc: "",
+                  budget: "",
+                  req: "",
+                  website: "",
+                  ok: false,
+                });
+              }}
+              className="px-6 py-3 rounded-xl text-sm font-semibold text-[#1E3A8A] bg-white border border-[#BFDBFE] hover:bg-[#F8FAFC] shadow-sm transition-all w-full sm:w-auto cursor-pointer"
+            >
+              Start New Request
+            </button>
+          </div>
         </div>
       ) : (
         <form onSubmit={handleSubmit} noValidate className="space-y-6">
@@ -433,23 +453,28 @@ export function ContactForm() {
               <span>Strict Non-Disclosure & Enterprise Data Privacy</span>
             </div>
 
-            <button
-              type="submit"
-              disabled={status === "submitting"}
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl text-sm font-semibold text-white bg-[#2563EB] hover:bg-[#1D4ED8] shadow-md shadow-[#2563EB]/25 border border-[#60A5FA]/30 transition-all hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 w-full sm:w-auto"
-            >
-              {status === "submitting" ? (
-                <>
-                  <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                  <span>Submitting...</span>
-                </>
-              ) : (
-                <>
-                  <span>Request Consultation</span>
-                  <Send className="w-4 h-4 text-[#93C5FD]" />
-                </>
-              )}
-            </button>
+            <div className="flex flex-col items-center sm:items-end gap-1.5 w-full sm:w-auto">
+              <button
+                type="submit"
+                disabled={status === "submitting"}
+                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl text-sm font-semibold text-white bg-[#2563EB] hover:bg-[#1D4ED8] shadow-md shadow-[#2563EB]/25 border border-[#60A5FA]/30 transition-all hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 w-full sm:w-auto cursor-pointer"
+              >
+                {status === "submitting" ? (
+                  <>
+                    <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                    <span>Opening Mail App...</span>
+                  </>
+                ) : (
+                  <>
+                    <span>Request Consultation</span>
+                    <Send className="w-4 h-4 text-[#93C5FD]" />
+                  </>
+                )}
+              </button>
+              <span className="text-[11px] text-[#64748B]">
+                Opens default mail app to <strong className="text-[#071B38] font-medium">{SITE_CONFIG.email}</strong>
+              </span>
+            </div>
           </div>
         </form>
       )}
